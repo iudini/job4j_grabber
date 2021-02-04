@@ -3,7 +3,6 @@ package ru.job4j.quartz;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -45,7 +44,7 @@ public class AlertRabbit {
 
     private static Connection init() {
         Connection connection = null;
-        try (InputStream in = new FileInputStream("./src/main/resources/rabbit.properties")) {
+        try (InputStream in = AlertRabbit.class.getResourceAsStream("/rabbit.properties")) {
             Properties properties = new Properties();
             properties.load(in);
             Class.forName(properties.getProperty("driver-class-name"));
