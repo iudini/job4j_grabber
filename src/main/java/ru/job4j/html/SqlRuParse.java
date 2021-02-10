@@ -29,6 +29,6 @@ public class SqlRuParse {
         Document doc = Jsoup.connect(url).get();
         Elements row = doc.select(".msgTable");
         String desc = row.get(0).select(".msgBody").get(1).text();
-        return new Post(name, desc, dateTime, url);
+        return new Post(name, desc, url, dateTime);
     }
 }

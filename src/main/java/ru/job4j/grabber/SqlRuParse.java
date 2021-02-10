@@ -39,7 +39,7 @@ public class SqlRuParse implements Parse {
             String desc = row.get(0).select(".msgBody").get(1).text();
             String time = row.get(0).select(".msgFooter").get(0).text();
             LocalDateTime dateTime = DateParse.parse(time.substring(0, time.indexOf("[")).strip());
-            post = new Post(name, desc, dateTime, link);
+            post = new Post(name, desc, link, dateTime);
         } catch (IOException e) {
             e.printStackTrace();
         }
