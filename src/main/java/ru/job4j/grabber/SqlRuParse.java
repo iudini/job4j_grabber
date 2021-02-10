@@ -21,7 +21,6 @@ public class SqlRuParse implements Parse {
             Elements row = doc.select(".forumTable").select("tr");
             for (int i = 1; i < row.size(); i++) {
                 Element href = row.get(i).child(1).tagName("a").child(0);
-                Element date = row.get(i).child(5);
                 String url = href.attr("href");
                 result.add(detail(url));
             }
