@@ -5,7 +5,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import ru.job4j.html.DateParse;
-import ru.job4j.html.Post;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
